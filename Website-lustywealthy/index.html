@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lusty Wealthy — Breathe slow, eat well, live light</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F3F2EB] text-[#2C302E] antialiased pb-24 md:pb-0">
+
+    <!-- Header / Navbar -->
+    <header class="bg-[#F3F2EB]/95 backdrop-blur-md z-40 border-b border-[#D8D5C9] sticky top-0">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 mx-auto md:mx-0">
+                <img src="asset/logo.png" alt="Logo Lusty Wealthy" class="w-6 h-6 object-cover shadow-sm">
+                <span class="font-serif-title font-bold text-lg sm:text-xl tracking-tight text-[#364F26]">Lusty Wealthy</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-xs font-semibold uppercase tracking-wider text-[#364F26]">
+                <a href="#menu" class="hover:opacity-75 transition">Menu</a>
+                <a href="#keunggulan" class="hover:opacity-75 transition">Keunggulan</a>
+                <a href="#kontak" class="hover:opacity-75 transition">Kontak</a>
+            </nav>
+            <button onclick="toggleCart()" class="hidden md:flex relative bg-[#364F26] text-[#F3F2EB] px-3.5 py-2 rounded-full text-xs font-semibold hover:bg-[#2A3E1E] transition items-center gap-1.5 shadow-sm">
+                <span>🛒 Keranjang</span>
+                <span id="cart-badge" class="bg-amber-400 text-[#364F26] px-2 py-0.5 rounded-full text-[10px] font-bold">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-10 pb-6 text-center">
+        <p class="text-[10px] sm:text-[11px] uppercase tracking-widest font-bold text-[#364F26] mb-2">Heverage & Healthy Drink</p>
+        <h1 class="font-serif-title text-3xl sm:text-4xl md:text-5xl text-[#364F26] font-bold leading-tight pb-2">
+            Breathe slow, eat well, live light.
+        </h1>
+        <p class="mt-2 text-stone-600 max-w-xl mx-auto text-xs sm:text-sm leading-relaxed">
+            Nikmati kesegaran racikan alami dalam kemasan praktis untuk menemani hari-harimu.
+        </p>
+    </section>
+
+    <!-- Banner Promo -->
+    <section class="max-w-5xl mx-auto px-4 mb-8">
+        <div class="bg-[#364F26] text-[#F3F2EB] p-5 sm:p-7 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-4 shadow-sm">
+            <div>
+                <h2 class="font-serif-title text-xl sm:text-2xl font-bold">Special Cold Brew & Healthy Drinks</h2>
+                <p class="text-stone-200 text-xs mt-1">100% Bahan Alami • Rendah Gula • Tanpa Pemanis Tambahan</p>
+            </div>
+            <a href="#menu" class="w-full md:w-auto text-center bg-[#F3F2EB] text-[#364F26] px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-white transition">
+                Pilih Menu
+            </a>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="keunggulan" class="bg-[#EAE8DF] py-10 my-8 border-y border-[#D8D5C9]">
+        <div class="max-w-5xl mx-auto px-4">
+            <h3 class="font-serif-title text-2xl font-bold text-center mb-6 text-[#364F26]">Kenapa Lusty Wealthy?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-white/70 p-5 rounded-2xl border border-[#D8D5C9]">
+                    <div class="w-9 h-9 bg-[#364F26]/10 text-[#364F26] rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">🌿</div>
+                    <h4 class="font-serif-title font-bold text-base text-[#364F26] mb-1">100% Alami</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Tanpa pengawet sintetik dan tanpa pemanis berlebihan.</p>
+                </div>
+                <div class="bg-white/70 p-5 rounded-2xl border border-[#D8D5C9]">
+                    <div class="w-9 h-9 bg-[#364F26]/10 text-[#364F26] rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">✨</div>
+                    <h4 class="font-serif-title font-bold text-base text-[#364F26] mb-1">Selalu Segar</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Diproduksi secara berkala dalam small batch untuk kualitas rasa optimal.</p>
+                </div>
+                <div class="bg-white/70 p-5 rounded-2xl border border-[#D8D5C9]">
+                    <div class="w-9 h-9 bg-[#364F26]/10 text-[#364F26] rounded-full flex items-center justify-center mx-auto mb-2 font-bold text-sm">🚀</div>
+                    <h4 class="font-serif-title font-bold text-base text-[#364F26] mb-1">Praktis Sat-Set</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Kemasan botol siap kirim kurir instan ke lokasimu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Menu Section -->
+    <section id="menu" class="max-w-5xl mx-auto px-4 pt-6 pb-4 scroll-mt-24">
+        <h3 class="font-serif-title text-2xl sm:text-3xl text-center text-[#364F26] mb-6 font-bold">Pilihan Menu</h3>
+        
+        <!-- Filter Category -->
+        <div class="flex flex-wrap justify-center items-center gap-2 mb-8 px-2">
+            <button onclick="filterCategory('semua', this)" class="cat-btn bg-[#364F26] text-white px-4 py-2 rounded-full text-xs font-semibold transition border border-[#364F26]">Semua</button>
+            <button onclick="filterCategory('jahe', this)" class="cat-btn bg-white text-[#364F26] px-4 py-2 rounded-full text-xs font-semibold transition border border-[#D8D5C9] hover:border-[#364F26]">Jahe Merah</button>
+            <button onclick="filterCategory('kopi', this)" class="cat-btn bg-white text-[#364F26] px-4 py-2 rounded-full text-xs font-semibold transition border border-[#D8D5C9] hover:border-[#364F26]">Kopi</button>
+            <button onclick="filterCategory('non-kopi', this)" class="cat-btn bg-white text-[#364F26] px-4 py-2 rounded-full text-xs font-semibold transition border border-[#D8D5C9] hover:border-[#364F26]">Non-Kopi</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            
+            <!-- Item 1: Ginger Original -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="jahe">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4/p-2 berlebih dari container agar foto mengisi ruang penuh -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <!-- PERUBAHAN: Menggunakan object-cover w-full h-full agar foto utuh memenuhi kotak tanpa terpotong -->
+                        <img src="asset/ginger-ori.png" alt="Ginger Original" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">Ginger Original</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 10.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Red Ginger murni. Kehangatan alami untuk menyegarkan tubuh.</p>
+                </div>
+                <button onclick="addToCart('Ginger Original', 10000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+            <!-- Item 2: Ginger Latte -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="jahe">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4 dan menambah h-52 serta overflow-hidden -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <span class="absolute top-2 right-2 bg-amber-400 text-[#364F26] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-sm z-10">⭐ Best Seller</span>
+                        <!-- PERUBAHAN: Mengganti ke object-cover dan menghapus padding p-2 -->
+                        <img src="asset/ginger-latte.png" alt="Ginger Latte" class="w-full h-full object-cover rounded-xl"> 
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">Ginger Latte</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 12.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Perpaduan Red Ginger, sentuhan gula aren alami, dan krimer lembut.</p>
+                </div>
+                <button onclick="addToCart('Ginger Latte', 12000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+            <!-- Item 4: Black Coffee Cold Brew -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini seperti pada produk lain -->
+                        <img src="asset/black-coffee.png" alt="Black Coffee Cold Brew" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">Black Coffee Cold Brew</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 18.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Ekstraksi dingin 100% kopi arabika murni tanpa gula (No Sugar).</p>
+                </div>
+                <button onclick="addToCart('Black Coffee Cold Brew', 18000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+            <!-- Item 5: White Coffee Cold Brew -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
+                        <img src="asset/white-coffee.png" alt="White Coffee Cold Brew" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">White Coffee Cold Brew</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 22.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Cold brew harum dipadu susu segar tanpa gula tambahan (No Sugar).</p>
+                </div>
+                <button onclick="addToCart('White Coffee Cold Brew', 22000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+            <!-- Item 6: Palm Sugar Latte Cold Brew -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <span class="absolute top-2 right-2 bg-amber-400 text-[#364F26] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-sm z-10">⭐ Best Seller</span>
+                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
+                        <img src="asset/palm-sugar.png" alt="Palm Sugar Cold Brew" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">Palm Sugar Latte Cold Brew</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 22.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Cold brew dengan rasa manis seimbang dari gula aren murni (Less Sugar).</p>
+                </div>
+                <button onclick="addToCart('Palm Sugar Latte Cold Brew', 22000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+            <!-- Item 3: Signature Chocolate -->
+            <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="non-kopi">
+                <div class="flex flex-col flex-grow">
+                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
+                    <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
+                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
+                        <img src="asset/signature-choco.png" alt="Signature Chocolate" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="flex justify-between items-start gap-2 mb-1.5">
+                        <h4 class="font-serif-title text-base font-bold text-[#364F26] leading-snug">Signature Chocolate</h4>
+                        <span class="text-xs font-bold bg-[#364F26] text-[#F3F2EB] px-2.5 py-1 rounded-full whitespace-nowrap shrink-0">Rp 18.000</span>
+                    </div>
+                    <p class="text-stone-500 text-xs leading-relaxed mb-4">Cokelat premium pekat tanpa gula tambahan (No Sugar Added).</p>
+                </div>
+                <button onclick="addToCart('Signature Chocolate', 18000)" class="w-full bg-[#F3F2EB] text-[#364F26] text-xs font-bold py-2.5 rounded-xl hover:bg-[#364F26] hover:text-white transition border border-[#D8D5C9]">
+                    + Keranjang
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Keranjang Belanja -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex justify-end">
+        <div class="bg-[#F3F2EB] w-full max-w-md h-full p-5 flex flex-col justify-between shadow-xl overflow-y-auto">
+            <div>
+                <div class="flex justify-between items-center pb-3 border-b border-[#D8D5C9]">
+                    <h3 class="font-serif-title font-bold text-lg text-[#364F26]">Keranjang Pesanan</h3>
+                    <button onclick="toggleCart()" class="text-stone-500 font-bold text-lg hover:text-stone-800">✕</button>
+                </div>
+                
+                <div id="cart-items" class="mt-3 space-y-2.5 max-h-[35vh] overflow-y-auto pr-1">
+                    <p class="text-xs text-stone-500 italic text-center py-6">Keranjang belanjaan masih kosong.</p>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-[#D8D5C9] space-y-3">
+                    <h4 class="font-serif-title font-bold text-xs uppercase tracking-wider text-[#364F26]">Data Pengiriman</h4>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-stone-700 mb-1">Nama Pemesan</label>
+                        <input type="text" id="cust-name" placeholder="Nama Anda" class="w-full text-xs p-2.5 rounded-xl border border-[#D8D5C9] bg-white focus:outline-none focus:border-[#364F26]">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-stone-700 mb-1">Alamat Pengiriman</label>
+                        <textarea id="cust-address" rows="2" placeholder="Alamat Lengkap..." class="w-full text-xs p-2.5 rounded-xl border border-[#D8D5C9] bg-white focus:outline-none focus:border-[#364F26]"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-stone-700 mb-1">Slot Pengiriman Hari</label>
+                        <select id="cust-slot" class="w-full text-xs p-2.5 rounded-xl border border-[#D8D5C9] bg-white focus:outline-none focus:border-[#364F26]">
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#D8D5C9] mt-4">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-xs font-semibold text-stone-700">Total Pembayaran:</span>
+                    <span id="cart-total" class="font-serif-title font-bold text-lg text-[#364F26]">Rp 0</span>
+                </div>
+                <button onclick="checkoutWA()" class="w-full bg-[#364F26] text-[#F3F2EB] font-bold py-3.5 rounded-xl hover:bg-[#2A3E1E] transition text-xs uppercase flex items-center justify-center gap-1.5 shadow-md">
+                    💬 Order via WA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Owner Rekap Penjualan -->
+    <div id="owner-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-[#F3F2EB] max-w-xl w-full rounded-2xl p-6 shadow-2xl border border-[#D8D5C9] text-stone-800 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center pb-3 border-b border-[#D8D5C9]">
+                <h3 class="font-serif-title font-bold text-lg text-[#364F26]">🔒 Dashboard Rekap Penjualan Owner</h3>
+                <button onclick="closeOwnerModal()" class="text-stone-500 font-bold hover:text-stone-800 no-print">✕</button>
+            </div>
+            
+            <div class="mt-4 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white p-3.5 rounded-xl border border-[#D8D5C9] text-center">
+                        <span class="text-[10px] text-stone-500 font-bold uppercase">Total Terjual</span>
+                        <p id="owner-weekly-qty" class="font-serif-title font-bold text-xl text-[#364F26] mt-1">0 Botol</p>
+                    </div>
+                    <div class="bg-white p-3.5 rounded-xl border border-[#D8D5C9] text-center">
+                        <span class="text-[10px] text-stone-500 font-bold uppercase">Total Omset</span>
+                        <p id="owner-weekly-omset" class="font-serif-title font-bold text-xl text-[#364F26] mt-1">Rp 0</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-[#D8D5C9]">
+                    <h4 class="font-semibold text-xs text-[#364F26] mb-2">Riwayat Transaksi Masuk</h4>
+                    <div id="owner-history-list" class="space-y-2 max-h-56 overflow-y-auto text-xs pr-1">
+                        <p class="text-stone-400 italic text-center py-4">Belum ada data transaksi tersimpan.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 no-print">
+                    <button onclick="exportToCSV()" class="bg-[#364F26] text-white py-2.5 rounded-xl text-xs font-bold hover:bg-[#2A3E1E] transition flex items-center justify-center gap-1.5 shadow-sm">
+                        📊 Unduh Excel (.csv)
+                    </button>
+                    <button onclick="window.print()" class="bg-stone-700 text-white py-2.5 rounded-xl text-xs font-bold hover:bg-stone-800 transition flex items-center justify-center gap-1.5 shadow-sm">
+                        📄 Unduh PDF (Laporan)
+                    </button>
+                </div>
+
+                <button onclick="clearOwnerData()" class="w-full bg-red-100 text-red-700 py-2 rounded-xl text-xs font-semibold hover:bg-red-200 transition no-print">
+                    Hapus Data Rekap
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Cart Button -->
+    <div class="fixed bottom-4 right-4 md:hidden z-30">
+        <button onclick="toggleCart()" class="bg-[#364F26] text-[#F3F2EB] p-3.5 rounded-full shadow-lg flex items-center gap-2">
+            <span class="text-base">🛒</span>
+            <span id="mobile-cart-badge" class="bg-amber-400 text-[#364F26] px-2 py-0.5 rounded-full text-xs font-bold">0</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer id="kontak" class="max-w-5xl mx-auto px-4 py-8 border-t border-[#D8D5C9] mt-10">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <p class="font-serif-title text-xl font-bold text-[#364F26]">Lusty Wealthy</p>
+                <p class="text-stone-500 text-xs italic">Breathe slow, eat well, live light</p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-3 text-xs font-medium">
+                <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-[#D8D5C9] text-[#364F26] hover:bg-[#364F26] hover:text-white transition shadow-sm">
+                    <span>💬</span> WhatsApp: +62 812-3456-7890
+                </a>
+                <a href="https://instagram.com/lusty_wealthy" target="_blank" class="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-[#D8D5C9] text-[#364F26] hover:bg-[#364F26] hover:text-white transition shadow-sm">
+                    <span>📷</span> Instagram: @lusty_wealthy
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-between items-center border-t border-[#EAE8DF] pt-4">
+            <p class="text-[10px] text-stone-400">© 2026 Lusty Wealthy. All rights reserved.</p>
+            <button onclick="loginOwner()" class="text-[10px] text-stone-400 hover:text-[#364F26] transition flex items-center gap-1">
+                🔐 Login Owner
+            </button>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
