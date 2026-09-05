@@ -114,9 +114,7 @@
             <!-- Item 1: Ginger Original -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="jahe">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4/p-2 berlebih dari container agar foto mengisi ruang penuh -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
-                        <!-- PERUBAHAN: Menggunakan object-cover w-full h-full agar foto utuh memenuhi kotak tanpa terpotong -->
                         <img src="asset/ginger-ori.png" alt="Ginger Original" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -133,10 +131,8 @@
             <!-- Item 2: Ginger Latte -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="jahe">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4 dan menambah h-52 serta overflow-hidden -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
                         <span class="absolute top-2 right-2 bg-amber-400 text-[#364F26] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-sm z-10">⭐ Best Seller</span>
-                        <!-- PERUBAHAN: Mengganti ke object-cover dan menghapus padding p-2 -->
                         <img src="asset/ginger-latte.png" alt="Ginger Latte" class="w-full h-full object-cover rounded-xl"> 
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -153,9 +149,7 @@
             <!-- Item 4: Black Coffee Cold Brew -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
-                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini seperti pada produk lain -->
                         <img src="asset/black-coffee.png" alt="Black Coffee Cold Brew" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -172,9 +166,7 @@
             <!-- Item 5: White Coffee Cold Brew -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
-                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
                         <img src="asset/white-coffee.png" alt="White Coffee Cold Brew" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -191,10 +183,8 @@
             <!-- Item 6: Palm Sugar Latte Cold Brew -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="kopi">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
                         <span class="absolute top-2 right-2 bg-amber-400 text-[#364F26] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-sm z-10">⭐ Best Seller</span>
-                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
                         <img src="asset/palm-sugar.png" alt="Palm Sugar Cold Brew" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -211,9 +201,7 @@
             <!-- Item 3: Signature Chocolate -->
             <div class="product-card bg-white p-4 sm:p-5 rounded-2xl border border-[#E2DFD2] shadow-sm flex flex-col justify-between h-full" data-category="non-kopi">
                 <div class="flex flex-col flex-grow">
-                    <!-- PERUBAHAN: Menghapus p-4 dan menerapkan struktur standar gambar -->
                     <div class="bg-[#F9F8F5] rounded-xl mb-3 flex justify-center items-center h-52 border border-[#F0EEE6] relative overflow-hidden">
-                        <!-- PERUBAHAN: Tempatkan tag <img> kamu di sini -->
                         <img src="asset/signature-choco.png" alt="Signature Chocolate" class="w-full h-full object-cover rounded-xl">
                     </div>
                     <div class="flex justify-between items-start gap-2 mb-1.5">
@@ -248,6 +236,10 @@
                     <div>
                         <label class="block text-[11px] font-semibold text-stone-700 mb-1">Nama Pemesan</label>
                         <input type="text" id="cust-name" placeholder="Nama Anda" class="w-full text-xs p-2.5 rounded-xl border border-[#D8D5C9] bg-white focus:outline-none focus:border-[#364F26]">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-stone-700 mb-1">Nomor WhatsApp</label>
+                        <input type="tel" id="cust-phone" placeholder="081234567890" class="w-full text-xs p-2.5 rounded-xl border border-[#D8D5C9] bg-white focus:outline-none focus:border-[#364F26]">
                     </div>
                     <div>
                         <label class="block text-[11px] font-semibold text-stone-700 mb-1">Alamat Pengiriman</label>
@@ -335,8 +327,8 @@
                 <p class="text-stone-500 text-xs italic">Breathe slow, eat well, live light</p>
             </div>
             <div class="flex flex-wrap justify-center items-center gap-3 text-xs font-medium">
-                <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-[#D8D5C9] text-[#364F26] hover:bg-[#364F26] hover:text-white transition shadow-sm">
-                    <span>💬</span> WhatsApp: +62 812-3456-7890
+                <a href="https://wa.me/6281903571096" target="_blank" class="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-[#D8D5C9] text-[#364F26] hover:bg-[#364F26] hover:text-white transition shadow-sm">
+                    <span>💬</span> WhatsApp: +62 819-0357-1096
                 </a>
                 <a href="https://instagram.com/lusty_wealthy" target="_blank" class="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-[#D8D5C9] text-[#364F26] hover:bg-[#364F26] hover:text-white transition shadow-sm">
                     <span>📷</span> Instagram: @lusty_wealthy
