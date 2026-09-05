@@ -104,16 +104,18 @@ function checkoutWA() {
     }
 
     const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
     const address = document.getElementById('cust-address').value.trim();
     const slot = document.getElementById('cust-slot').value;
 
-    if (!name || !address) {
-        alert("Mohon lengkapi Nama dan Alamat Pengiriman.");
+    if (!name || !phone || !address) {
+        alert("Mohon lengkapi Nama, Nomor WhatsApp, dan Alamat Pengiriman.");
         return;
     }
 
     let text = `Halo Lusty Wealthy, saya mau pesan:\n\n`;
     text += `*Nama:* ${name}\n`;
+    text += `*No. WA:* ${phone}\n`;
     text += `*Slot Kirim:* ${slot}\n`;
     text += `*Alamat:* ${address}\n\n`;
     text += `*Rincian Pesanan:*\n`;
@@ -133,19 +135,20 @@ function checkoutWA() {
     text += `\n*Total Pembayaran:* Rp ${grandTotal.toLocaleString('id-ID')}\n\n`;
     text += `Mohon diproses untuk pengiriman hari ${slot}. Terima kasih!`;
 
-    saveOwnerOrder(name, address, totalQty, grandTotal, slot, itemsDetail);
+    saveOwnerOrder(name, phone, address, totalQty, grandTotal, slot, itemsDetail);
 
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
 }
 
 // Simpan Data Transaksi ke LocalStorage (Rekap Owner)
-function saveOwnerOrder(name, address, qty, total, slot, items) {
+function saveOwnerOrder(name, phone, address, qty, total, slot, items) {
     let history = JSON.parse(localStorage.getItem('lw_owner_recap') || '[]');
     history.push({
         id: Date.now(),
         date: new Date().toLocaleString('id-ID'),
         name: name,
+        phone: phone,
         address: address,
         qty: qty,
         total: total,
@@ -180,12 +183,13 @@ function openOwnerModal() {
             totalQty += item.qty;
             totalOmset += item.total;
             const itemsText = item.items ? item.items.map(i => `${i.name} (x${i.qty})`).join(', ') : '-';
+            const phoneText = item.phone ? ` • WA: ${item.phone}` : '';
             return `
                 <div class="bg-[#F9F8F5] p-3 rounded-lg border border-[#E2DFD2]">
                     <div class="flex justify-between items-start">
                         <div>
                             <p class="font-bold text-[#364F26] text-xs">${item.name} <span class="text-stone-500 font-normal">(${item.slot})</span></p>
-                            <p class="text-[10px] text-stone-500">${item.date} • ${item.qty} botol</p>
+                            <p class="text-[10px] text-stone-500">${item.date} • ${item.qty} botol${phoneText}</p>
                         </div>
                         <span class="font-bold text-[#364F26] text-xs">Rp ${item.total.toLocaleString('id-ID')}</span>
                     </div>
@@ -222,14 +226,15 @@ function exportToCSV() {
     }
 
     let csvContent = "data:text/csv;charset=utf-8,";
-    csvContent += "Tanggal,Nama Pemesan,Slot Kirim,Jumlah (Botol),Total Omset (Rp),Alamat,Rincian Produk\n";
+    csvContent += "Tanggal,Nama Pemesan,No WA,Slot Kirim,Jumlah (Botol),Total Omset (Rp),Alamat,Rincian Produk\n";
 
     history.forEach(row => {
         const itemsText = row.items ? row.items.map(i => `${i.name} (${i.qty}x)`).join(' | ') : '-';
         const cleanAddress = `"${row.address.replace(/"/g, '""')}"`;
         const cleanItems = `"${itemsText.replace(/"/g, '""')}"`;
+        const phone = row.phone || '-';
         
-        csvContent += `"${row.date}","${row.name}","${row.slot}",${row.qty},${row.total},${cleanAddress},${cleanItems}\n`;
+        csvContent += `"${row.date}","${row.name}","${phone}","${row.slot}",${row.qty},${row.total},${cleanAddress},${cleanItems}\n`;
     });
 
     const encodedUri = encodeURI(csvContent);
